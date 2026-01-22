@@ -1,54 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StockAppl</title>
+    <title>FinAstro - 財經星象圖表</title>
     <link rel='stylesheet' href='static/css/base.css'>
     <div id="stored-data"></div>
 
 </head>
 <body>
-    <h1 id="title">Financial Data</h1>
+    <h1 id="title">財經星象數據</h1>
     <form action="">
-        <label for="stock-select">Choose a stock:</label>
+        <label for="stock-select">選擇股票：</label>
         <select name="stock-select" id="stock-select">
         </select>
-        <label for="stock-display-type">Stock display type:</label>
+        <label for="stock-display-type">顯示類型：</label>
         <select name="stock-display-type" id="stock-display-type">
         </select>
-        
-        <label for="graph_start_date">Start</label>
+
+        <label for="graph_start_date">開始日期</label>
         <input type="date" name="graph_start_date" id="graph_start_date" value= "2024-01-01">
-        <label for="graph_end_date">End</label>
+        <label for="graph_end_date">結束日期</label>
         <input type="date" name="graph_end_date" id="graph_end_date" value = "2025-12-31">
 
         <div id="body-list">
         </div>
-        <label for="body-angle">Angle:</label>
+        <label for="body-angle">角度：</label>
         <select name="body-angle" id="body-angle">
         </select>
-        <label for="body-data-type">Body data type:</label>
+        <label for="body-data-type">天體數據類型：</label>
         <select name="body-data-type" id="body-data-type">
         </select>
 
-        <label for="show_markers">label all markers</label>
+        <label for="show_markers">標記所有轉換點</label>
         <input type="checkbox" name="show_markers" id="show_markers" >
-        <label for="show_text">Show names</label>
+        <label for="show_text">顯示名稱</label>
         <input type="checkbox" name="show_text" id="show_text">
 
     </form>
 
-    <button id="update-button" type="button" disabled>Data currently being read</button>
+    <button id="update-button" type="button" disabled>資料讀取中...</button>
     <div id = "stockSelector"></div>
 
-    <div id="graph" style="width: 100%; height:700px""></div>
+    <div id="graph" style="width: 100%; height:700px"></div>
 
     <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
 
     <script src="static/js/financescript.js"></script>
 </body>
-
-
 
 </html>

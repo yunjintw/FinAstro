@@ -28,8 +28,8 @@ SYMBOLS = {
     "S and P 500": "^GSPC"
 }
 
-# 數據目錄
-DATA_DIR = Path(__file__).parent.parent / "static" / "data"
+# 數據目錄（財經數據放在 finance 子目錄）
+DATA_DIR = Path(__file__).parent.parent / "static" / "data" / "finance"
 
 def download_stock(name: str, ticker: str, start_date: str = "2020-01-01"):
     """下載單支股票數據"""

@@ -4,49 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinAstro - 財經星象圖表</title>
-    <link rel='stylesheet' href='static/css/base.css'>
+    <link rel="stylesheet" href="static/css/v2.css">
     <div id="stored-data"></div>
-
 </head>
 <body>
-    <h1 id="title">財經星象數據</h1>
-    <form action="">
-        <label for="stock-select">選擇股票：</label>
-        <select name="stock-select" id="stock-select">
-        </select>
-        <label for="stock-display-type">顯示類型：</label>
-        <select name="stock-display-type" id="stock-display-type">
-        </select>
-
-        <label for="graph_start_date">開始日期</label>
-        <input type="date" name="graph_start_date" id="graph_start_date" value= "2024-01-01">
-        <label for="graph_end_date">結束日期</label>
-        <input type="date" name="graph_end_date" id="graph_end_date" value = "2025-12-31">
-
-        <div id="body-list">
+    <!-- 側邊欄 -->
+    <aside class="sidebar">
+        <!-- Logo -->
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-icon">&#9790;</span>
+                <span>FinAstro</span>
+            </div>
         </div>
-        <label for="body-angle">角度：</label>
-        <select name="body-angle" id="body-angle">
-        </select>
-        <label for="body-data-type">天體數據類型：</label>
-        <select name="body-data-type" id="body-data-type">
-        </select>
 
-        <label for="show_markers">標記所有轉換點</label>
-        <input type="checkbox" name="show_markers" id="show_markers" >
-        <label for="show_text">顯示名稱</label>
-        <input type="checkbox" name="show_text" id="show_text">
+        <!-- 股票選擇 -->
+        <div class="sidebar-section">
+            <div class="section-title">選擇股票</div>
+            <select class="stock-select" id="stock-select">
+                <!-- 動態載入 -->
+            </select>
+        </div>
 
-    </form>
+        <!-- 天體選擇 -->
+        <div class="sidebar-section">
+            <div class="section-title">天體選擇</div>
+            <div class="body-grid" id="body-list">
+                <!-- 動態載入 -->
+            </div>
+        </div>
 
-    <button id="update-button" type="button" disabled>資料讀取中...</button>
-    <div id = "stockSelector"></div>
+        <!-- 圖表設定 -->
+        <div class="sidebar-section">
+            <div class="section-title">圖表設定</div>
 
-    <div id="graph" style="width: 100%; height:700px"></div>
+            <div class="setting-group">
+                <label class="setting-label">顯示類型</label>
+                <select class="setting-select" id="stock-display-type">
+                    <!-- 動態載入 -->
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">天體數據類型</label>
+                <select class="setting-select" id="body-data-type">
+                    <!-- 動態載入 -->
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">角度</label>
+                <select class="setting-select" id="body-angle">
+                    <!-- 動態載入 -->
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label class="setting-label">日期範圍</label>
+                <div class="date-quick-btns" id="date-quick-btns">
+                    <button class="date-btn" data-range="1d">1天</button>
+                    <button class="date-btn" data-range="5d">5天</button>
+                    <button class="date-btn" data-range="1m">1個月</button>
+                    <button class="date-btn" data-range="6m">6個月</button>
+                    <button class="date-btn active" data-range="ytd">YTD</button>
+                    <button class="date-btn" data-range="1y">1年</button>
+                    <button class="date-btn" data-range="5y">5年</button>
+                    <button class="date-btn" data-range="max">最長</button>
+                </div>
+                <input type="hidden" id="graph_start_date" value="2024-01-01">
+                <input type="hidden" id="graph_end_date" value="2025-12-31">
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">標記轉換點</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="show_markers">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="toggle-group">
+                <span class="toggle-label">顯示中文名稱</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="show_text">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <button class="update-button" id="update-button" type="button" disabled>
+                資料讀取中...
+            </button>
+        </div>
+    </aside>
+
+    <!-- 主要內容區 -->
+    <main class="main-content">
+        <!-- 頂部工具列 -->
+        <div class="toolbar">
+            <div class="toolbar-left">
+                <span class="current-stock" id="current-stock-name">NVIDIA Corp</span>
+                <div class="stock-price">
+                    <span class="price-value" id="current-price">--</span>
+                    <span class="price-change up" id="price-change">--</span>
+                </div>
+            </div>
+            <div class="toolbar-right">
+                <button class="toolbar-btn" id="btn-fullscreen">&#x26F6; 全螢幕</button>
+                <button class="toolbar-btn" id="btn-export">&#x2B07; 匯出</button>
+            </div>
+        </div>
+
+        <!-- 圖表容器 -->
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <div id="graph"></div>
+            </div>
+        </div>
+
+        <!-- 狀態列 -->
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="status-dot"></span>
+                <span id="status-text">準備就緒</span>
+            </div>
+            <div class="status-item">
+                <span id="data-count">105 支股票 / 11 個天體</span>
+            </div>
+        </div>
+    </main>
 
     <script src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>
-
-    <script src="static/js/financescript.js"></script>
+    <script src="static/js/financescript-v2.js"></script>
 </body>
-
 </html>

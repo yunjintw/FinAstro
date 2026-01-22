@@ -41,6 +41,56 @@ SYMBOLS = {
     "緯創": ("3231.TW", "2003-08-19"),
     "緯穎": ("6669.TW", "2017-11-13"),
     "和碩": ("4938.TW", "2009-01-12"),
+
+    # AI 數據中心與基礎設施
+    "Vertiv Holdings": ("VRT", "2020-02-07"),
+    "Eaton Corporation": ("ETN", "1972-06-01"),
+    "Fabrinet": ("FN", "2010-06-25"),
+    "Oracle": ("ORCL", "1986-03-12"),
+    "Arista Networks": ("ANET", "2014-06-06"),
+    "Nebius Group": ("NBIS", "2024-10-21"),
+    "Iris Energy": ("IREN", "2021-11-17"),
+    "Cipher Mining": ("CIFR", "2021-08-27"),
+    "CrowdStrike": ("CRWV", "2019-06-12"),
+
+    # 鈾礦與核能
+    "Centrus Energy": ("LEU", "2014-09-30"),
+    "Cameco": ("CCJ", "1996-07-15"),
+    "Uranium Energy": ("UEC", "2005-12-21"),
+    "Denison Mines": ("DNN", "2006-12-01"),
+    "Constellation Energy": ("CEG", "2022-02-02"),
+    "Vistra Corp": ("VST", "2016-10-03"),
+    "Talen Energy": ("TLN", "2024-05-17"),
+    "NextEra Energy": ("NEE", "1985-01-01"),
+    "Southern Company": ("SO", "1982-01-01"),
+    "Global X Uranium ETF": ("URA", "2010-11-04"),
+    "Sprott Uranium Miners ETF": ("URNM", "2019-12-03"),
+    "VanEck Uranium Nuclear ETF": ("NLR", "2007-08-13"),
+
+    # 電力與基礎設施
+    "Cleantech Grid ETF": ("GRID", "2009-06-16"),
+    "Global X Defense Tech ETF": ("SHLD", "2023-02-21"),
+
+    # 稀土與電池材料
+    "MP Materials": ("MP", "2020-11-18"),
+    "Lynas Rare Earths": ("LYSDY", "2011-01-03"),
+    "4U Uranium": ("UUUU", "2005-11-22"),
+    "Lynas Rare Earths Ltd": ("LYC", "2011-01-03"),
+    "Albemarle": ("ALB", "1994-03-01"),
+    "Sociedad Quimica y Minera": ("SQM", "1993-09-22"),
+    "USA Rare Earth": ("USAR", "2024-03-22"),
+    "American Battery Technology": ("ABAT", "2021-04-06"),
+    "VanEck Rare Earth ETF": ("REMX", "2010-10-27"),
+
+    # 半導體與科技
+    "Broadcom": ("AVGO", "2009-08-06"),
+    "Kratos Defense": ("KTOS", "2011-01-03"),
+    "ThredUp": ("TMDX", "2021-03-26"),
+    "EOSE Energy": ("EOSE", "2020-11-23"),
+    "Amazon": ("AMZN", "1997-05-15"),
+    "MercadoLibre": ("MELI", "2007-08-10"),
+    "SoFi Technologies": ("SOFI", "2021-06-01"),
+    "Rubrik": ("RBRK", "2024-04-25"),
 }
 
 # 數據目錄（財經數據放在 finance 子目錄）

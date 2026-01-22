@@ -87,10 +87,17 @@ SYMBOLS = {
     "Kratos Defense": ("KTOS", "2011-01-03"),
     "ThredUp": ("TMDX", "2021-03-26"),
     "EOSE Energy": ("EOSE", "2020-11-23"),
-    "Amazon": ("AMZN", "1997-05-15"),
     "MercadoLibre": ("MELI", "2007-08-10"),
     "SoFi Technologies": ("SOFI", "2021-06-01"),
     "Rubrik": ("RBRK", "2024-04-25"),
+
+    # 大型科技股
+    "Google": ("GOOGL", "2004-08-19"),
+    "Meta": ("META", "2012-05-18"),
+
+    # 台股與日股
+    "91APP": ("6741.TWO", "2021-05-17"),
+    "Appier": ("4180.T", "2021-03-30"),
 }
 
 # 數據目錄（財經數據放在 finance 子目錄）

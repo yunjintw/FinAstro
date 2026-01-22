@@ -12,7 +12,8 @@
       "Bash(git push:*)",
       "Bash(python -m http.server:*)",
       "Bash(python:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(git fetch:*)"
     ]
   }
 }

@@ -4,6 +4,74 @@ const stockSelector = document.querySelector('#stock-select');
 const stockData = {};
 const bodyData = {};
 
+// 日期範圍計算函數
+function setDateRange(range) {
+    const today = new Date();
+    const endDate = today.toISOString().split('T')[0];
+    let startDate;
+
+    switch(range) {
+        case '1d':
+            startDate = endDate;
+            break;
+        case '5d':
+            const fiveDaysAgo = new Date(today);
+            fiveDaysAgo.setDate(today.getDate() - 5);
+            startDate = fiveDaysAgo.toISOString().split('T')[0];
+            break;
+        case '1m':
+            const oneMonthAgo = new Date(today);
+            oneMonthAgo.setMonth(today.getMonth() - 1);
+            startDate = oneMonthAgo.toISOString().split('T')[0];
+            break;
+        case '6m':
+            const sixMonthsAgo = new Date(today);
+            sixMonthsAgo.setMonth(today.getMonth() - 6);
+            startDate = sixMonthsAgo.toISOString().split('T')[0];
+            break;
+        case 'ytd':
+            startDate = today.getFullYear() + '-01-01';
+            break;
+        case '1y':
+            const oneYearAgo = new Date(today);
+            oneYearAgo.setFullYear(today.getFullYear() - 1);
+            startDate = oneYearAgo.toISOString().split('T')[0];
+            break;
+        case '5y':
+            const fiveYearsAgo = new Date(today);
+            fiveYearsAgo.setFullYear(today.getFullYear() - 5);
+            startDate = fiveYearsAgo.toISOString().split('T')[0];
+            break;
+        case 'max':
+            startDate = '1940-01-01';
+            break;
+        default:
+            startDate = today.getFullYear() + '-01-01';
+    }
+
+    document.getElementById('graph_start_date').value = startDate;
+    document.getElementById('graph_end_date').value = endDate;
+
+    // 更新按鈕狀態
+    document.querySelectorAll('.date-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.range === range) {
+            btn.classList.add('active');
+        }
+    });
+}
+
+// 初始化日期按鈕事件
+function initDateButtons() {
+    document.querySelectorAll('.date-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            setDateRange(this.dataset.range);
+        });
+    });
+    // 預設 YTD
+    setDateRange('ytd');
+}
+
 const angle_list = [360, 180, 90, 45, 30, 0];
 const bodyDataType_list = ['Longitude', 'Latitude', 'Declination', 'Distance'];
 const bodyDataType_zh = { 'Longitude': '黃經', 'Latitude': '黃緯', 'Declination': '赤緯', 'Distance': '距離' };
@@ -202,6 +270,7 @@ const loadBodies = async () => {
 
 function setInitialValues() {
     fillInSelectors();
+    initDateButtons();
 }
 
 // 股票選擇變更事件

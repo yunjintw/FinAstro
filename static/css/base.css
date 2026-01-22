@@ -1,0 +1,179 @@
+body {
+    background-color: rgb(75, 196, 62);
+    color: black;
+}
+
+.adminBody {
+    background-color: rgb(142, 111, 218);
+
+}
+
+.locationDateTimeSetter {
+    width: 100%;
+}
+
+h1,h2, #starData {
+    text-align: center;
+}
+
+.locationDateTimeSetter, .locationDateTimeSetter td, .locationDateTimeSetter th {
+    background-color: skyblue;
+    color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 0;
+    justify-content: center;
+}
+
+.locationDateTimeView {
+    width: 100%;
+}
+.headerData {
+    width: 100%;
+
+}
+.locationDateTimeView, .locationDateTimeView  td , .locationDateTimeView  th {
+    background-color: lightskyblue;
+    color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 0;
+    text-align: center;
+}
+
+.locationDateTimeView td:hover, .locationDateTimeView th:hover {
+    color: lightskyblue;
+    background-color: black;
+
+}
+
+.dataTabs {
+    margin-top: 1em;
+    width: 100%;
+}
+ .dataTabs td {
+    background-color: blue;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 0;
+    text-align: center;
+}
+.dataTabs a {
+    text-decoration-line: none;
+    color: lightgray;
+    font-size: 0.8em;
+    text-align: center;
+
+}
+
+.dataTabs a:hover {
+    background-color: lightcyan;
+    color: black;
+}
+
+td.pageTitle {
+    border-style: none;
+    font-size: 1.5em;
+    background-color: powderblue;
+    color: black;
+    font-weight: bold;
+
+}
+a.changeLocation {
+    color: white;
+}
+
+.dataTable { 
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dataTable table{ 
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 0;
+}
+.dataTable td, .dataTable th { 
+    padding: 0 0.5em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-spacing: 0;
+
+}
+ .dataTable th { 
+    border-width: 2px;
+    text-align: center;
+ }
+ .dataTable td { 
+    text-align: right;
+ }
+
+ .hiddenTable  {
+    border-style: none;
+    border-width: 0px;
+    vertical-align: top;
+    height: 100%;
+ }
+
+ .menuTable {
+    width: 100%;
+    height: 100%;
+ }
+.menuTable td {
+    text-align: right;  
+    height: 100%;
+}
+
+ .adminLink, adminLink button {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 0;
+    border-radius: 2em;
+    padding: none;
+    text-decoration-line: none;
+    font-size: 1em;
+    margin: 0em;
+    justify-self: right;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    color: mediumslateblue;
+    text-align: center;
+    font-family:sans-serif;
+
+ }
+ .adminLink:hover {
+    color: aquamarine;
+    background-color: mediumslateblue;
+}
+
+.adminLinkList, .adminLinkList td{
+    background-color: lightskyblue;
+    color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-spacing: 0;
+    text-align: center;
+}
+.adminLinkList td { 
+    font-size: 1em;
+    margin: 0em;
+    justify-self: right;
+    align-items: center;
+}
+.adminLinkList { 
+    width: 100%;
+}
+
+.adminLinkList td:hover { 
+    color: lightskyblue;
+    background-color: black;
+}
